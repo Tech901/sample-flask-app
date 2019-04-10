@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Sign our gestbook</h2>
+    <form method="post" action="{{ url_for('guestbook') }}">
+        <p>Name <input type="text" name="guest_name" ></p>
+        <p><input type="submit" value="Sign it"></p>
+    </form>
+
+    <h2>Guests</h2>
+    <ul>
+    {% for guest in guests %}
+        <li>{{ guest }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
